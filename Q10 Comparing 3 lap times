@@ -28,14 +28,14 @@ public class FastestLapTime {
 
         if (time1 > time2) {
             if (time1 > time3)
-                System.out.print("The first lap is the fastest.");
+                System.out.print("The first lap is the fastest. (" +a1+ ":" +a2+ ":" +a3+ ")");
             else
-                System.out.print("The third lap is the fastest.");
+                System.out.print("The third lap is the fastest. (" +c1+ ":" +c2+ ":" +c3+ ")");
         } else {
             if (time2 > time3)
-                System.out.print("The second lap is the fastest.");
+                System.out.print("The second lap is the fastest. (" +b1+ ":" +b2+ ":" +b3+ ")");
             else
-                System.out.print("The third lap is the fastest.");
+                System.out.print("The third lap is the fastest. (" +c1+ ":" +c2+ ":" +c3+ ")");
         }
     }
 }
