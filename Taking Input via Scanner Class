@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class UserInput {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+
+        System.out.println("Enter a string, integer, character and double: ");
+
+        String str = obj.nextLine();
+        int num = obj.nextInt();
+        char ch = obj.next().charAt(0);
+        double db = obj.nextDouble();
+
+        System.out.println("The string is "+str);
+        System.out.println("The integer is " +num);
+        System.out.println("The character is "+ch);
+        System.out.println("The double is "+db);
+    }
+}
