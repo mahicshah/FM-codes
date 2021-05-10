@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Timing {
+    public static void main(String[] args) {
+        long starttime = 0, endtime = 0;
+        int input2 = 2;
+
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+
+        if (input1 == 1) {
+            starttime = System.nanoTime();
+            input2 = sc.nextInt();
+
+            if (input2 == 1) {
+                endtime = System.nanoTime();
+                long time = (endtime - starttime);
+                float stopwatch = (float) time / 1000000000;
+                System.out.print("Acceleration Time is " + stopwatch + " seconds.");
+            }
+        }
+
+        else if (input1 == 2) {
+
+            starttime = System.nanoTime();
+
+            while (input2 != 0) {
+                input2 = sc.nextInt();
+
+                if (input2 == 1) {
+                    endtime = System.nanoTime();
+                    long time = (endtime - starttime);
+                    float stopwatch = (float) time / 1000000000;
+                    System.out.print("Lap Time is " + stopwatch + " seconds.");
+                    starttime = endtime;
+                }
+
+                else if (input2 == 0) {
+                    System.out.print("The program is stopped.");
+                }
+            }
+        }
+    }
+}
