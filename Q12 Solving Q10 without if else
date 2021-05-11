@@ -17,7 +17,12 @@ public class WithoutIfElse {
         int temp = temp1 < temp2 ? temp1 : temp2;
         int result = temp3 < temp ? temp3 : temp;
 
-        System.out.println("The fastest lap time is " +result+ ".");
+        String x = Integer.toString(result);
 
+        String mm = x.substring(0,2);
+        String ss = x.substring(2,4);
+        String msms = x.substring(4,6);
+
+        System.out.println("The fastest lap time is " +mm+ ":" +ss+ ":"  +msms+ ".");
     }
 }
