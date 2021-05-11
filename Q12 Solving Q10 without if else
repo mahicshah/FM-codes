@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class WithoutIfElse {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the first lap time in mm:ss:msms format, without the colons:");
+        String a = sc.nextLine();
+        System.out.println("Enter the second lap time in mm:ss:msms format, without the colons:");
+        String b = sc.nextLine();
+        System.out.println("Enter the third lap time in mm:ss:msms format, without the colons:");
+        String c = sc.nextLine();
+
+        int temp1 = Integer.parseInt(a);
+        int temp2 = Integer.parseInt(b);
+        int temp3 = Integer.parseInt(c);
+
+        int temp = temp1 < temp2 ? temp1 : temp2;
+        int result = temp3 < temp ? temp3 : temp;
+
+        System.out.println("The fastest lap time is " +result+ ".");
+
+    }
+}
