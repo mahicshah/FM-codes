@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class SeparateFunction {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the first string:");
+        String str1 = sc.nextLine();
+        System.out.println("enter second string");
+        String str2 = sc.nextLine();
+        check(str1, str2);
+
+    }
+
+    public static void check(String str5, String str6) {
+        String str3 = str5.toUpperCase();
+        String str4 = str6.toUpperCase();
+
+        if (str3.equals(str4)) {
+            if (str5.equals(str6))
+                System.out.println("Both strings are same with case sensitivity.");
+            else
+                System.out.println("Both strings are same without case sensitivity.");
+        } else
+            System.out.println("They are not same.");
+    }
+}
