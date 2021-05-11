@@ -17,10 +17,10 @@ public class SeparateFunction {
 
         if (str3.equals(str4)) {
             if (str5.equals(str6))
-                System.out.println("Both strings are same with case sensitivity.");
+                System.out.println("0: Both strings are same with case sensitivity.");
             else
-                System.out.println("Both strings are same without case sensitivity.");
+                System.out.println("1: Both strings are same without case sensitivity.");
         } else
-            System.out.println("They are not same.");
+            System.out.println("2: They are not same.");
     }
 }
