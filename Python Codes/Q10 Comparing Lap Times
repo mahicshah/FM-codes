@@ -1,0 +1,30 @@
+time1 = input("Enter the first lap time in mm:ss:msms format, without the colons: ")
+time2 = input("Enter the second lap time in mm:ss:msms format, without the colons: ")
+time3 = input("Enter the third lap time in mm:ss:msms format, without the colons: ")
+
+a1 = int(time1[0:2])
+a2 = int(time1[2:4])
+a3 = int(time1[4:6])
+
+b1 = int(time2[0:2])
+b2 = int(time2[2:4])
+b3 = int(time2[4:6])
+
+c1 = int(time3[0:2])
+c2 = int(time3[2:4])
+c3 = int(time3[4:6])
+
+laptime1 = (a1 * 60) + a2 + (a3 / 1000)
+laptime2 = (b1 * 60) + b2 + (b3 / 1000)
+laptime3 = (c1 * 60) + c2 + (c3 / 1000)
+
+if laptime1 < laptime2:
+    if laptime1 < laptime3:
+        print("The first lap is the fastest. (", a1, ":", a2, ":",a3, ")")
+    else:
+        print("The third lap is the fastest. (", c1, ":", c2, ":", c3, ")")
+else:
+     if laptime2 < laptime3:
+         print("The second lap is the fastest. (", b1, ":", b2, ":", b3, ")")
+     else:
+         print("The third lap is the fastest. (", c1, ":", c2, ":", c3, ")")
