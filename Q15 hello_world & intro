@@ -1,0 +1,30 @@
+*hello_world.java:*
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        Intro x = new Intro();
+        x.print_intro();
+        inherit y = new inherit();
+        y.print_hw();
+
+        y.print_intro();
+        y.print_hw();
+    }
+}
+
+class inherit extends Intro{
+    public static void print_hw(){
+        System.out.println("Hello World");
+    }
+}
+
+
+
+
+*intro.java*
+
+public class Intro {
+    public static void print_intro() {
+        System.out.println("Hi I am a student of MIT");
+    }
+}
