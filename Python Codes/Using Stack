@@ -1,0 +1,39 @@
+import time
+
+def Acceleration(b = 1, start = 0):
+    a = int(input("To start the acceleration test, Press 1"))
+    test_input = []
+    test_input.append(a)
+    l = test_input[0]
+    if(l == 1 and b == 1):
+        start = time.time()
+        b = 0
+        Acceleration(b, start)
+    elif(l == 1, b == 0):
+        print(time.time() - start,"seconds")
+        test_input.pop
+        c = int(input("Enter the input"))
+        test_input.append(b)
+        if(l == 1):
+            Acceleration()
+        elif(l == 2):
+            Endurance()
+            test_input.pop
+
+def Endurance():
+    test_input = []
+    start = time.time()
+    c = int(input("To display lap time, press 1"))
+    test_input.append(c)
+    l = test_input[0]
+    
+    while l == 1:
+        print("Lap time : {} seconds".format(time.time()-start))
+        c = int(input("To display lap time press 1"))
+
+    if (c==2):
+        Acceleration()
+        test_input.pop
+    elif (c==0):
+        pass
+Acceleration()
