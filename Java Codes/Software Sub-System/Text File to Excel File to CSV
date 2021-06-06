@@ -1,0 +1,48 @@
+import java.awt.*;
+import  java.io.*;
+import java.util.Scanner;
+import  org.apache.poi.hssf.usermodel.HSSFSheet;
+import  org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import  org.apache.poi.hssf.usermodel.HSSFRow;
+
+public class Excel {
+    public static void main(String[] args) throws IOException {
+        String filename = "/Users/MahicShah/Downloads/FM Coding Tasks/excelsheet.xlsx";
+        HSSFWorkbook workbook = new HSSFWorkbook();
+        HSSFSheet sheet = workbook.createSheet("excelsheet");
+
+        File text = new File("/Users/MahicShah/Downloads/FM Coding Tasks/textfile.txt");
+        Scanner sc = new Scanner(text);
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter the number of columns in the text file: ");
+        int columns = in.nextInt();
+
+        String[][] array = new String[columns][columns];
+        while (sc.hasNextLine()) {
+            for (int i = 0; i < array.length; i++) {
+                String[] line = sc.nextLine().trim().split(" ");
+                for (int j = 0; j < line.length; j++) {
+                    array[i][j] = line[j];
+                }
+            }
+        }
+
+        int k, l;
+
+        for (k = 0; k < columns; k++) {
+            HSSFRow rowhead = sheet.createRow((short) k);
+            for (l = 0; l < columns; l++) {
+                rowhead.createCell(l).setCellValue(array[k][l]);
+            }
+        }
+        FileOutputStream fileOut = new FileOutputStream(filename);
+        workbook.write(fileOut);
+        fileOut.close();
+        workbook.close();
+        System.out.println("The excel file has been created successfully.");
+
+        Desktop.getDesktop().open(new File("/Users/MahicShah/Downloads/FM Coding Tasks/excelsheet.xlsx"));
+        
+    }
+}
