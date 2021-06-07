@@ -1,7 +1,0 @@
-str1 = input("Enter the 1st string: ")
-str2 = input("Enter the 2nd string: ")
-
-if str1 == str2:
-    print("The two strings are same.")
-else:
-    print("The two strings are different.")
