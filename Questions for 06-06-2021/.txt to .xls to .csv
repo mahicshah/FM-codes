@@ -33,6 +33,7 @@ public class Excel {
 
                     data.append(cell.getStringCellValue() + ",");
                 }
+                data.append("\n");
             }
             fos.write(data.toString().getBytes());
             fos.close();
