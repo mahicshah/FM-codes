@@ -1,5 +1,3 @@
-This repository contains all the codes given in FM Taskphase.
-
 The branch 'Java-Codes' contains 17 Java codes, based on 17 basic Java questions.
 
 The branch 'Python-Codes' contains 17 Python codes, based on 17 basic Python questions.
