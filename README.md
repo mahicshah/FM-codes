@@ -9,7 +9,6 @@
 - Convert a text file to excel sheet, and convert that excel sheet to csv file.
 
 - Convert a given text file to a 2D array with ASCII values, change the ASCII values, then convert it back to a new text file. Check if the two text files are same or not.
-
 ```
 ### Task 2 ###
 
