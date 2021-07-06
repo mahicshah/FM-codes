@@ -3,8 +3,8 @@
 - - - -
    Branch     |   Overview
 ------------- | -------------
-Java-Codes  | Contains all the Java codes, based on 17 basic Java questions (including different data structures)
-Python-Codes  | Contains all the Python codes, based on 17 basic Python questions (including different data structures)
+Java-Codes  | Contains all the Java codes, based on 17 basic Java questions (including usage of different data structures)
+Python-Codes  | Contains all the Python codes, based on 17 basic Python questions (including usage of different data structures)
 Software-Sub-Subsystem | Contains all the codes given in the Software Sub-Subsystem of FM.
 
 - - - -
