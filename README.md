@@ -10,4 +10,4 @@ Software-Sub-Subsystem | Contains all the codes given in the Software Sub-Subsys
 
 - In each branch (and each folder), the questions are listed in their respective text files.
 
-- In ___Software-Sub-Subsystem___, each new set of codes will be placed in a new folder.
+- In ___Software-Sub-Subsystem___, each new task (set of codes) will be placed in a new folder.
