@@ -1,0 +1,104 @@
+## Questions: ##
+
+```
+Q1. Print the following output
+    *
+    **
+    ***
+    ****
+    *****
+    
+    
+    
+Q2. Take a string, integer, char, double input from user and print it using (for input)
+a) InputStreamReader
+b) Scanner Class
+
+
+Q3. Print the sequence shown in 1) but the number rows should be decided by the user
+
+
+
+Q4. Take string input from user and count no of vowels in it
+
+
+
+Q5. Create an integer array, fill it with user’s inputs and then sort it with bubble sort
+
+
+
+Q6. Implement a calculator. According to user input, take appropriate no of inputs required and print the result:
+User input:   Function:
+1             Addition
+2             Subtraction
+3             Multiplication
+4             Sin
+5             Cos
+6             Tan
+7             Exp (input1^input2)
+
+
+
+Q7. Take two string inputs from the user and check if they are the same (both with and without case-sensitivity)
+
+
+
+Q8. Take an integer input from the user and check if it is palindrome.
+
+
+
+Q9. Write a program to implement the following:
+During acceleration testing you press 1 once when the car leaves the start line and press once again when the car crosses the finish line.
+The program should print the acceleration time.
+Now the endurance testing starts and you give an input 2.
+Now whenever the car passes the startline you press 1 the lap time is printed.
+Now when acceleration testing starts you press 2 again.
+At the end of you press 0 to stop the program
+
+
+
+Q10. Take three string inputs representing lap times in minute:seconds:milliseconds format and print which lap was the fastest
+
+
+
+Q11. Take two integer inputs from the user and subtract one from the other without using minus operator
+
+
+
+Q12.Do the 10) question without using if-else
+
+
+
+Q13. Do the 7) question again such that the checking is done in a separate function and returns the following:
+0: both strings are same with case sensitivity
+1: both strings are same without case sensitivity
+2: They are not same
+
+
+
+Q14.Do the 5th question again by implementing the bubble sort algorithm in a separate function however the function shouldnt return anything.
+
+
+
+Q15.Implement two classes hello_world and intro such that both are in separate files.
+Class hello_world has the following methods: public static void main () and public static void print_hw()
+intro has the following methods: public static void print_intro()
+print_hw() and print_intro() print “Hello World” and “Hi I am a student of MIT” resp. main() function calls print_hw() and print_intro one one after the other.
+Implement this using:
+1. Using an object of type ‘intro’
+2. Inheritance
+
+
+
+Q16. Create a class MIT and a class student. The class student has the following private data members:
+String Name
+int reg_no
+String branch.
+It also has respective public member functions to both set and print these data members.
+In the main method of class MIT create 3 objects of type student.
+Set the values of each data member of each student object (representing actual real life students) and then print them.
+
+
+
+Q17. Take a array of ASCII integers and print them into a readable string.Also vice versa in the same code.
+```
