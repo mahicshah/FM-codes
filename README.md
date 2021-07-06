@@ -22,4 +22,4 @@ This branch contains codes on the following topics:
 ```
 - - - -
 **NOTE**:
-Each new task (set of codes) will be kept in a new folder in this branch.
+- Each new task (set of codes) will be kept in a new folder in this branch.
