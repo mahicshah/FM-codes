@@ -13,14 +13,13 @@
 ### Task 2 ###
 
 ```
-- Interfaces
+- Lambda expressions
 
 - Generics
 
-- Lambda expressions
-
 - Multithreading
 
+- Interfaces
 ```
 - - - -
 **NOTE**:
