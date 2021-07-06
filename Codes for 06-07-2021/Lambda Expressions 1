@@ -1,0 +1,32 @@
+import java.util.Scanner;
+interface lambda1{
+    void check (String e,String f);
+}
+
+class comparingstrings {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the first string: ");
+        String a = sc.nextLine();
+        System.out.print("Enter the second string: ");
+        String b = sc.nextLine();
+
+        lambda1 object = (String e, String f)->{
+            String c = e.toUpperCase();
+            String d = f.toUpperCase();
+
+            if (c.equals(d))
+            {
+                if (e.equals(f))
+                {System.out.print("The strings are the same, and they are in the same case.");}
+                else
+                {System.out.print("The strings are the same, but they are not in the same case."); }
+            }
+            else
+            {System.out.print("The strings are different.");
+            }
+        };
+        object.check(a,b);
+    }
+}
