@@ -15,8 +15,6 @@ This branch contains codes on the following topics:
 
 - Lambda expressions
 
-- Platform class
-
 - Threads, Multithreads
 
 ```
