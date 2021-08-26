@@ -86,7 +86,7 @@ public class HelloController{
 
         myList_1.getItems().add("                          "+ Subject.getText() + "           ");
         myList_2.getItems().add("                          "+ Credits.getText() + "           ");
-        myList_3.getItems().add("                          "+ g + "         ");
+        myList_3.getItems().add("                       "+ g + "         ");
 
         System.out.println("subject = " + s);
         System.out.println("credits = " + cred);
@@ -138,7 +138,7 @@ public class HelloController{
 
         myList_1.getItems().add("                          "+ Subject.getText() + "           ");
         myList_2.getItems().add("                          "+ Credits.getText() + "           ");
-        myList_3.getItems().add("                          "+ g + "         ");
+        myList_3.getItems().add("                       "+ g + "         ");
 
         System.out.println("total cred = " + total_cred);
         System.out.println("sum = " + sum);
