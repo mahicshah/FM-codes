@@ -32,7 +32,11 @@ public class HelloController{
     @FXML
     private Button ResetButton;
     @FXML
-    private ListView myList;
+    private ListView myList_1;
+    @FXML
+    private ListView myList_2;
+    @FXML
+    private ListView myList_3;
 
 
     double marks = 0, sum = 0, gpa = 0.00;
@@ -80,7 +84,9 @@ public class HelloController{
 
         GPA.setText(String.valueOf(rounded_gpa));
 
-        myList.getItems().add("                           "+Subject.getText() + "                                                            " +cred+ "                                                           " +g);
+        myList_1.getItems().add("                          "+ Subject.getText() + "           ");
+        myList_2.getItems().add("                          "+ Credits.getText() + "           ");
+        myList_3.getItems().add("                          "+ g + "         ");
 
         System.out.println("subject = " + s);
         System.out.println("credits = " + cred);
@@ -130,7 +136,9 @@ public class HelloController{
 
         double rounded_gpa = Math.round(gpa * 100.0) / 100.0;
 
-        myList.getItems().add("                           "+Subject.getText() + "                                                            " +cred+ "                                                           " +g);
+        myList_1.getItems().add("                          "+ Subject.getText() + "           ");
+        myList_2.getItems().add("                          "+ Credits.getText() + "           ");
+        myList_3.getItems().add("                          "+ g + "         ");
 
         System.out.println("total cred = " + total_cred);
         System.out.println("sum = " + sum);
@@ -153,7 +161,10 @@ public class HelloController{
         Credits.setText("");
         Grade.setText("");
 
-        myList.getItems().clear();
+        myList_1.getItems().clear();
+        myList_2.getItems().clear();
+        myList_3.getItems().clear();
+
     }
 
 //    public TableView<Product> tableview;
