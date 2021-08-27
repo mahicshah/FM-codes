@@ -2,6 +2,8 @@
 
 A GPA Calculator created using JavaFX in Intellij Idea.
 
+![GPA Calculator](https://user-images.githubusercontent.com/82862036/131079366-38b9ed33-8d55-4032-8ce8-14a870b4e5b6.gif)
+
 ## Features
 - Ability to add courses to calculate GPA
 - Table view for easier viewing
