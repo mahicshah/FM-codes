@@ -28,8 +28,8 @@
       <TextField fx:id="Grade" layoutX="361.0" layoutY="314.0" prefHeight="25.0" prefWidth="129.0" promptText="Grade" style="-fx-border-color: gray;" />
       <Button fx:id="AddButton" layoutX="509.0" layoutY="314.0" mnemonicParsing="false" onAction="#add" text="Add" />
       <ListView fx:id="myList_1" layoutX="37.0" layoutY="61.0" prefHeight="219.0" prefWidth="199.0" style="-fx-border-color: black;" />
-      <Label layoutX="113.0" layoutY="40.0" text="Subject" />
-      <Label layoutX="300.0" layoutY="40.0" text="Credits" />
+      <Label alignment="CENTER" layoutX="112.0" layoutY="40.0" prefHeight="17.0" prefWidth="50.0" text="Subject" textAlignment="CENTER" />
+      <Label layoutX="301.0" layoutY="40.0" text="Credits" />
       <Label layoutX="465.0" layoutY="40.0" text="Grade" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="25.0" layoutX="37.0" layoutY="36.0" stroke="BLACK" strokeType="INSIDE" width="521.0" />
       <Line endX="-11.0" endY="130.0" layoutX="247.0" layoutY="149.0" startX="-11.0" startY="-112.0" />
