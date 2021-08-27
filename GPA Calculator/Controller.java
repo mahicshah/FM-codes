@@ -1,19 +1,9 @@
 package com.example.gpa_calculator;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
-import java.net.URL;
-import java.text.DecimalFormat;
-import java.util.Formatter;
-import java.util.ResourceBundle;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 public class HelloController{
 
@@ -84,7 +74,7 @@ public class HelloController{
 
         GPA.setText(String.valueOf(rounded_gpa));
 
-        myList_1.getItems().add("                          "+ Subject.getText() + "           ");
+        myList_1.getItems().add("                           "+ Subject.getText() + "           ");
         myList_2.getItems().add("                          "+ Credits.getText() + "           ");
         myList_3.getItems().add("                       "+ g + "         ");
 
@@ -102,6 +92,7 @@ public class HelloController{
 
 
     public void add(ActionEvent event) {
+
         g = Grade.getText();
 
         if (g.equals("A+"))
@@ -136,7 +127,7 @@ public class HelloController{
 
         double rounded_gpa = Math.round(gpa * 100.0) / 100.0;
 
-        myList_1.getItems().add("                          "+ Subject.getText() + "           ");
+        myList_1.getItems().add("                           "+ Subject.getText() + "           ");
         myList_2.getItems().add("                          "+ Credits.getText() + "           ");
         myList_3.getItems().add("                       "+ g + "         ");
 
@@ -150,6 +141,7 @@ public class HelloController{
     }
 
     public void reset(ActionEvent event) {
+
         marks = 0;
         sum = 0;
         gpa = 0.00;
@@ -166,24 +158,4 @@ public class HelloController{
         myList_3.getItems().clear();
 
     }
-
-//    public TableView<Product> tableview;
-//    public TableColumn<Product, String> table_sub;
-//    public TableColumn<Product, String> table_cred;
-//    public TableColumn<Product, String> table_g;
-//
-//    @Override
-//    public void initialize(URL url, ResourceBundle resourceBundle) {
-//        table_sub.setCellValueFactory(new PropertyValueFactory<>("Product_sub"));
-//        table_cred.setCellValueFactory(new PropertyValueFactory<>("Product_cred"));
-//        table_g.setCellValueFactory(new PropertyValueFactory<>("Product_g"));
-//        tableview.setItems(add_values());
-//
-//    }
-//
-//    public ObservableList<Product> add_values() {
-//        ObservableList<Product> observableList = FXCollections.observableArrayList();
-//        observableList.add(new Product("a", "b", "c"));
-//        return observableList;
-//    }
 }
