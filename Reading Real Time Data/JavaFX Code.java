@@ -30,7 +30,7 @@ public class JavaFX_jssc_Uno extends Application {
     SerialPort arduinoPort = null;
     ObservableList<String> portList;
 
-    final int NUM_OF_POINT = 50;
+    final int NUM_OF_POINT = 250;
     XYChart.Series series;
 
     private void detectPort() {
@@ -65,8 +65,12 @@ public class JavaFX_jssc_Uno extends Application {
 
         final NumberAxis xAxis = new NumberAxis();
         final NumberAxis yAxis = new NumberAxis();
+
         xAxis.setLabel("Time");
+
         yAxis.setLabel("Voltage");
+        yAxis.setAutoRanging(false);
+        yAxis.setUpperBound(5.0);
 
         final LineChart<Number,Number> lineChart =
                 new LineChart<>(xAxis,yAxis);
@@ -135,13 +139,11 @@ public class JavaFX_jssc_Uno extends Application {
                     try {
 
                         byte[] b = serialPort.readBytes();
-                        int value = b[0] & 0xff;    //convert to int
-                        String st = String.valueOf(value);
+                        int value = b[0] & 0xff;
 
-                        //Update label in ui thread
                         Platform.runLater(() -> {
 
-                            gauge.setValue(Double.parseDouble(st));
+                            gauge.setValue(value);
 
                             shiftSeriesData((float)value * 5/255); //in 5V scale
                         });
