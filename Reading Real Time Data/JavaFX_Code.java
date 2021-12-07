@@ -1,4 +1,4 @@
-package com.example.RealTimeDataRead;
+package com.example.javafx_arduino_live;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,8 +13,10 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import jssc.SerialPort;
 import static jssc.SerialPort.MASK_RXCHAR;
@@ -23,17 +25,19 @@ import jssc.SerialPortException;
 import jssc.SerialPortList;
 import eu.hansolo.medusa.Gauge;
 
-public class JavaFX_jssc_Uno extends Application {
+import  java.io.*;
 
+public class Code extends Application {
     Gauge gauge = new Gauge();
-
+    private static  String a;
     SerialPort arduinoPort = null;
     ObservableList<String> portList;
 
-    final int NUM_OF_POINT = 250;
+    Label labelValue;
+    final int NUM_OF_POINT = 100;
     XYChart.Series series;
 
-    private void detectPort() {
+    private void detectPort(){
 
         portList = FXCollections.observableArrayList();
 
@@ -46,6 +50,9 @@ public class JavaFX_jssc_Uno extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+
+        labelValue = new Label();
+        labelValue.setFont(new Font("Arial", 28));
 
         detectPort();
         final ComboBox comboBoxPorts = new ComboBox(portList);
@@ -60,21 +67,16 @@ public class JavaFX_jssc_Uno extends Application {
                         disconnectArduino();
                         connectArduino(newValue);
                     }
-
                 });
 
         final NumberAxis xAxis = new NumberAxis();
         final NumberAxis yAxis = new NumberAxis();
-
         xAxis.setLabel("Time");
-
-        yAxis.setLabel("Voltage");
-        yAxis.setAutoRanging(false);
-        yAxis.setUpperBound(5.0);
+        yAxis.setLabel("Value");
 
         final LineChart<Number,Number> lineChart =
                 new LineChart<>(xAxis,yAxis);
-        lineChart.setTitle("Real Time Line Chart");
+        lineChart.setTitle("Real Time Data Line Chart");
 
         series = new XYChart.Series();
         lineChart.setLegendVisible(false);
@@ -82,12 +84,12 @@ public class JavaFX_jssc_Uno extends Application {
         lineChart.setAnimated(false);
         lineChart.setCreateSymbols(false);
 
-        for(int i=0; i<NUM_OF_POINT; i++){
+        for(byte i=0; i<NUM_OF_POINT; i++) {
             series.getData().add(new XYChart.Data(i, 0));
         }
 
         gauge.setMinValue(0.00);
-        gauge.setMaxValue(255.00);
+        gauge.setMaxValue(1023.00);
         gauge.setMaxHeight(100000);
         gauge.setMaxWidth(100000);
 
@@ -100,7 +102,8 @@ public class JavaFX_jssc_Uno extends Application {
 
         Scene scene = new Scene(root, 500, 400);
 
-        primaryStage.setTitle("Real Time Arduino Data + Speedometer");
+        primaryStage.setTitle(
+                "Real Time Arduino Data + Speedometer");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -137,54 +140,46 @@ public class JavaFX_jssc_Uno extends Application {
             serialPort.addEventListener((SerialPortEvent serialPortEvent) -> {
                 if(serialPortEvent.isRXCHAR()){
                     try {
-
                         byte[] b = serialPort.readBytes();
                         int value = b[0] & 0xff;
+                        int data = (int) (value*4.01176471);
+                        String st = String.valueOf(data);
+                        System.out.println(st);
 
                         Platform.runLater(() -> {
-
-                            gauge.setValue(value);
-
-                            shiftSeriesData((float)value * 5/255); //in 5V scale
+                            labelValue.setText(st);
+                            gauge.setValue(Double.parseDouble(st));
+                            shiftSeriesData((float)data);
                         });
 
                     } catch (SerialPortException ex) {
-                        Logger.getLogger(JavaFX_jssc_Uno.class.getName())
+                        Logger.getLogger(Code.class.getName())
                                 .log(Level.SEVERE, null, ex);
                     }
-
                 }
             });
 
             arduinoPort = serialPort;
             success = true;
-
         } catch (SerialPortException ex) {
-
-            Logger.getLogger(JavaFX_jssc_Uno.class.getName())
+            Logger.getLogger(Code.class.getName())
                     .log(Level.SEVERE, null, ex);
-            System.out.println("SerialPortException: " + ex.toString());
+            System.out.println("SerialPortException: " + ex);
         }
         return success;
     }
 
-    public void disconnectArduino() {
+    public void disconnectArduino(){
 
         System.out.println("Arduino is disconnected.");
-
-        if(arduinoPort != null) {
-
+        if(arduinoPort != null){
             try {
                 arduinoPort.removeEventListener();
-
-                if(arduinoPort.isOpened()) {
-
+                if(arduinoPort.isOpened()){
                     arduinoPort.closePort();
                 }
-
             } catch (SerialPortException ex) {
-
-                Logger.getLogger(JavaFX_jssc_Uno.class.getName())
+                Logger.getLogger(Code.class.getName())
                         .log(Level.SEVERE, null, ex);
             }
         }
@@ -192,12 +187,11 @@ public class JavaFX_jssc_Uno extends Application {
 
     @Override
     public void stop() throws Exception {
-
         disconnectArduino();
         super.stop();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         launch(args);
     }
 }
